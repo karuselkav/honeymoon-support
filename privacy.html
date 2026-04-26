@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Honeymoon — Privacy Policy</title>
+    <meta
+      id="meta-desc"
+      name="description"
+      content="Honeymoon app privacy policy: data we collect, AI, analytics, and your rights."
+    />
+    <meta property="og:type" content="website" />
+    <meta id="og-title" property="og:title" content="Honeymoon — Privacy Policy" />
+    <meta
+      id="meta-og"
+      property="og:description"
+      content="Honeymoon app privacy policy: data we collect, AI, analytics, and your rights."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://karuselkav.github.io/honeymoon-support/privacy.html" />
+    <meta name="application-name" content="Honeymoon" />
+    <meta id="meta-theme" name="theme-color" content="#0A0714" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="apple-touch-icon" href="app-icon.png" />
+    <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js" defer></script>
+    <style>
+      :root {
+        --radius-lg: 1rem;
+        --radius-xl: 1.25rem;
+        --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Inter", sans-serif;
+      }
+      [data-theme="dark"] {
+        --bg-0: #0a0714;
+        --bg-1: #1a0f2e;
+        --bg-2: #3d1a47;
+        --bg-3: #5a2a6b;
+        --card: rgba(26, 15, 46, 0.85);
+        --card-border: rgba(255, 215, 0, 0.18);
+        --text: #f5e8d3;
+        --text-dim: #e8cfc2;
+        --text-muted: #a68a8a;
+        --accent: #ff2e9e;
+        --chip-bg: rgba(26, 15, 46, 0.9);
+        --chip-border: rgba(255, 215, 0, 0.15);
+      }
+      [data-theme="light"] {
+        --bg-0: #fff4f8;
+        --bg-1: #ffe8f1;
+        --bg-2: #f6eeff;
+        --bg-3: #fff8fb;
+        --card: rgba(255, 242, 247, 0.95);
+        --card-border: #f0d8e3;
+        --text: #4b2e3f;
+        --text-dim: #6e5061;
+        --text-muted: #8a6f7a;
+        --accent: #c05c8d;
+        --chip-bg: rgba(255, 255, 255, 0.9);
+        --chip-border: #ebdce4;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        font-family: var(--font);
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+      }
+      .bg-cosmos {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(165deg, var(--bg-0) 0%, var(--bg-1) 35%, var(--bg-2) 70%, var(--bg-3) 100%);
+      }
+      .wrap {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 1.5rem 1rem 3rem;
+      }
+      @media (min-width: 640px) {
+        .wrap {
+          padding: 2.5rem 1.5rem 4rem;
+        }
+      }
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+        flex-wrap: wrap;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        color: inherit;
+      }
+      .brand-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 22%;
+        overflow: hidden;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+      }
+      .brand-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .brand-name {
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--text-dim);
+      }
+      .controls {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .select-lang {
+        appearance: none;
+        font: inherit;
+        font-size: 0.8rem;
+        font-weight: 500;
+        padding: 0.45rem 1.75rem 0.45rem 0.65rem;
+        border-radius: 9999px;
+        border: 1px solid var(--chip-border);
+        background: var(--chip-bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23A68A8A' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")
+          no-repeat right 0.5rem center;
+        color: var(--text);
+        cursor: pointer;
+        max-width: 10.5rem;
+      }
+      [data-theme="light"] .select-lang {
+        background-color: #fff8fb;
+      }
+      .icon-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 9999px;
+        border: 1px solid var(--chip-border);
+        background: var(--chip-bg);
+        color: var(--text-dim);
+        cursor: pointer;
+        border: none;
+        border: 1px solid var(--chip-border);
+      }
+      .icon-btn:hover {
+        color: var(--text);
+        border-color: #ffd700;
+      }
+      .subnav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem 0.6rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.8rem;
+      }
+      .subnav a {
+        color: var(--text-dim);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.25rem 0.4rem;
+        border-radius: 0.4rem;
+      }
+      .subnav a:hover {
+        color: var(--accent);
+      }
+      .subnav a[aria-current="page"] {
+        color: var(--text);
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+      }
+      h1 {
+        text-align: center;
+        font-size: clamp(1.45rem, 4vw, 1.9rem);
+        font-weight: 600;
+        margin: 0 0 0.4rem;
+        line-height: 1.2;
+      }
+      .last-upd {
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin: 0 0 1.75rem;
+      }
+      .legal-box {
+        border: 1px solid var(--card-border);
+        background: var(--card);
+        border-radius: var(--radius-xl);
+        padding: 1.1rem 1.15rem 1.25rem;
+        box-shadow: 0 8px 36px rgba(0, 0, 0, 0.15);
+      }
+      @media (min-width: 640px) {
+        .legal-box {
+          padding: 1.35rem 1.5rem 1.5rem;
+        }
+      }
+      .legal-box h2 {
+        font-size: 0.98rem;
+        font-weight: 600;
+        margin: 1.15rem 0 0.45rem;
+        color: var(--text);
+        line-height: 1.3;
+      }
+      .legal-box h2:first-child {
+        margin-top: 0;
+      }
+      .legal-box p {
+        margin: 0 0 0.65rem;
+        font-size: 0.88rem;
+        line-height: 1.58;
+        color: var(--text-dim);
+      }
+      .legal-box ul {
+        margin: 0.2rem 0 0.65rem;
+        padding-left: 1.1rem;
+        font-size: 0.88rem;
+        line-height: 1.5;
+        color: var(--text-dim);
+      }
+      .legal-box li {
+        margin-bottom: 0.25rem;
+      }
+      .legal-box a {
+        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 0.15em;
+      }
+      [data-theme="light"] .legal-box a {
+        color: #a04070;
+      }
+      .footer {
+        margin-top: 2rem;
+        text-align: center;
+        font-size: 0.75rem;
+        color: var(--text-muted);
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-cosmos" aria-hidden="true"></div>
+    <div class="wrap">
+      <header class="topbar">
+        <a class="brand" href="index.html" id="brand-link">
+          <div class="brand-icon">
+            <img src="app-icon.png" width="180" height="180" alt="" decoding="async" />
+          </div>
+          <span class="brand-name">Honeymoon</span>
+        </a>
+        <div class="controls">
+          <label class="sr-only" for="lang-select" id="lang-label">Language</label>
+          <select id="lang-select" class="select-lang" aria-labelledby="lang-label"></select>
+          <button type="button" class="icon-btn" id="theme-toggle" aria-label="Theme">
+            <i data-lucide="sun" class="t-sun" style="width: 1.05rem; height: 1.05rem" aria-hidden="true"></i>
+            <i data-lucide="moon" class="t-moon" style="width: 1.05rem; height: 1.05rem; display: none" aria-hidden="true"></i>
+          </button>
+        </div>
+      </header>
+
+      <nav class="subnav" aria-label="Site">
+        <a href="index.html" id="nav-support">Support</a>
+        <span class="text-muted" aria-hidden="true">·</span>
+        <a href="privacy.html" id="nav-privacy" aria-current="page">Privacy</a>
+      </nav>
+
+      <h1 id="h1">Privacy policy</h1>
+      <p class="last-upd" id="last-upd"></p>
+
+      <article class="legal-box" id="legal-article" lang="en"></article>
+
+      <footer class="footer" id="footer-hint"></footer>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+        var CONTACT = "vnovaastrum@gmail.com";
+        var LASTUPD = "2026-04-27";
+        var LANGS = [
+          { code: "en", name: "English" },
+          { code: "ru", name: "Русский" },
+          { code: "hi", name: "हिन्दी" },
+          { code: "es", name: "Español" },
+          { code: "de", name: "Deutsch" },
+          { code: "fr", name: "Français" },
+          { code: "it", name: "Italiano" },
+        ];
+        var LS_LANG = "honeymoon.support.lang";
+        var LS_THEME = "honeymoon.support.theme";
+        var THEME_LEGACY = "support-page-theme";
+
+        /** Blocks: h2 + paragraphs. Placeholders: {{email}}, {{date}} */
+        var I = {
+          en: {
+            pageTitle: "Honeymoon — Privacy Policy",
+            meta: "Honeymoon privacy policy: data collection, AI, analytics, and your rights.",
+            h1: "Privacy policy",
+            last: "Last updated: {{date}}",
+            navSupport: "Support",
+            navPrivacy: "Privacy",
+            langLabel: "Language",
+            themeL: "Light mode",
+            themeD: "Dark mode",
+            footer: "Honeymoon. For the support page, see the Support tab.",
+            blocks: [
+              {
+                h: "1. Who we are",
+                p: [
+                  'Honeymoon (“we”, “us”) is a mobile app for astrology and related features (for example, horoscopes, natal charts, compatibility, Tarot, and in-app chat). This policy explains what personal and technical data the app can process, why, and what choices you have. If you have questions, contact us at <a href="mailto:{{email}}">{{email}}</a>.',
+                ],
+              },
+              {
+                h: "2. Data we collect and generate",
+                p: [
+                  "Depending on how you use the app, the following may be processed:",
+                ],
+                ul: [
+                  "Account and profile: optional details you enter (for example, display name) and, where you use astrological features, birth date, birth time, and birth or residence location, as you provide them. Some of this is needed to compute charts; it may be stored on your device.",
+                  "In-app content: saved results (for example, Tarot, compatibility) and in-app messages you address to the optional AI assistant, when you use that feature.",
+                  "Device and app technical data: app version, language, typical diagnostics needed to run the app, and, where you allow it, product analytics in production builds. Crash reports may be sent to our crash reporting service in release builds to improve stability.",
+                  "In-app purchase status: we receive subscription/entitlement status from Apple; we do not process your full payment card details (Apple does).",
+                ],
+              },
+              {
+                h: "3. How we use data",
+                p: [
+                  "We use this information to: provide the app’s features, personalize your experience, maintain and improve performance and reliability, respond to your support requests, protect security and prevent abuse, and comply with legal obligations. We do not sell your personal information.",
+                ],
+              },
+              {
+                h: "4. AI and external services",
+                p: [
+                  "If you use the optional AI chat or generated interpretations, the content you send (and relevant context the app adds, for example, chart or Tarot context you attach) is transmitted to one or more third-party model providers to generate a reply. Those providers are independent processors; you should not share sensitive or legally privileged information in chat beyond what is necessary. Provider names and data handling may be described in the app or its documentation and may be updated with product changes. When we route requests through our or third-party APIs, we use reasonable measures to protect data in transit.",
+                ],
+              },
+              {
+                h: "5. Analytics, tracking, and Firebase",
+                p: [
+                  "The app can use Google Firebase (for example, Firebase Analytics and, in production release builds, crash reporting). In production, analytics is intended to be disabled unless you have allowed tracking in line with Apple’s App Tracking Transparency (where applicable) and the app is not a debug build. You can change tracking permission in iOS settings; analytics may be limited or off when you disable tracking, subject to the app’s own rules for debug/test builds. Crash reporting in development builds may be limited so test crashes do not pollute production reports.",
+                ],
+              },
+              {
+                h: "6. Cloud storage and your device",
+                p: [
+                  "Much of your profile and chart data is stored on your device. The app is designed so that some optional cloud or sync features, if we enable them, may be controlled by separate settings. Unless such a feature is enabled in your version, your full profile is not required to be uploaded to our database for the app to work. If we enable first-party cloud account features, we will update this policy. Third-party sign-in, if any, is covered by the relevant provider’s terms.",
+                ],
+              },
+              {
+                h: "7. Retention and security",
+                p: [
+                  "We keep information only as long as needed for the purposes above, to comply with the law, or to resolve disputes. We use industry-standard technical and organizational measures; no system is 100% secure, but we work to protect your data.",
+                ],
+              },
+              {
+                h: "8. Your rights and choices",
+                p: [
+                  "Depending on where you live, you may have the right to access, correct, delete, or port personal data, or to object to or limit certain processing (for example, under the GDPR, UK GDPR, CCPA/CPRA, or other local laws). You can request access or deletion by emailing us. You can delete the app; many items remain on the device only unless synced or backed up by your settings.",
+                ],
+              },
+              {
+                h: "9. Children",
+                p: [
+                  "Honeymoon is not directed to children under 13 (or a higher age where required in your country). We do not knowingly collect personal information from such users. If you believe we have, contact us and we will take appropriate steps to delete it.",
+                ],
+              },
+              {
+                h: "10. International transfers",
+                p: [
+                  "We or our service providers (including model and infrastructure providers) may process data in countries other than your own. We take steps, including where appropriate contractual safeguards, to protect the data in line with this policy and applicable law.",
+                ],
+              },
+              {
+                h: "11. Changes to this policy",
+                p: [
+                  "We may update this page from time to time. The “Last updated” date at the top will change when we do. Continued use of the app after changes means you acknowledge the updated policy, unless applicable law requires your consent for material changes in your region.",
+                ],
+              },
+              {
+                h: "12. Contact",
+                p: [
+                  "Privacy requests and questions: <a href=\"mailto:{{email}}\">{{email}}</a>.",
+                ],
+              },
+            ],
+          },
+          ru: {
+            pageTitle: "Honeymoon — Политика конфиденциальности",
+            meta: "Политика конфиденциальности Honeymoon: какие данные обрабатываем, аналитика, ИИ, ваши права.",
+            h1: "Политика конфиденциальности",
+            last: "Обновлено: {{date}}",
+            navSupport: "Поддержка",
+            navPrivacy: "Конфиденциальность",
+            langLabel: "Язык",
+            themeL: "Светлая тема",
+            themeD: "Тёмная тема",
+            footer: "Honeymoon. Страница поддержки — вкладка «Поддержка».",
+            blocks: [
+              {
+                h: "1. Кто мы",
+                p: [
+                  'Honeymoon («мы») — мобильное приложение с астрологическими и смежными функциями (гороскоп, натальная карта, совместимость, Таро, чат). Здесь описано, какие персональные и технические данные обрабатываются, с какой целью и каков ваш выбор. Вопросы: <a href="mailto:{{email}}">{{email}}</a>.',
+                ],
+              },
+              {
+                h: "2. Какие данные",
+                p: ["В зависимости от использования приложения обрабатывается в том числе:"],
+                ul: [
+                  "Профиль: имя (если указали) и, для астрологических расчётов, дата, время и место рождения / места, которые вы вводите. Часть данных хранится на устройстве и нужна для построения карт.",
+                  "Контент: сохранённые результаты (Таро, совместимость и т.д.) и сообщения опциональному ИИ-ассистенту, если вы им пользуетесь.",
+                  "Технические данные: версия приложения, язык, диагностика, при согласии — аналитика в production; в релизах возможны отчёты о сбоях для стабильности. Покупки: статус подписки/права с Apple, без полных реквизитов карты (их обрабатывает Apple).",
+                ],
+              },
+              {
+                h: "3. Цели обработки",
+                p: [
+                  "Предоставление функций, персонализация, улучшение и поддержка, безопасность, требования законодательства. Мы не продаём персональные данные в смысле «продажи» CCPA. ",
+                ],
+              },
+              {
+                h: "4. ИИ и внешние сервисы",
+                p: [
+                  "Для чата и сгенерированных текстов ваши сообщения и прикреплённый контекст (например, дайджест карты или Таро) могут направляться внешним поставщикам моделей. Не вводите в чат больше чувствительных данных, чем нужно. Список провайдеров и маршрутизация могут обновляться. Передача по сети защищается обычными мерами.",
+                ],
+              },
+              {
+                h: "5. Аналитика, трекинг, Firebase",
+                p: [
+                  "Возможна аналитика и отчёты о сбоях через Google Firebase. В production аналитика согласуется с разрешениями iOS, включая App Tracking Transparency, и отключена в debug. Ограничения по краш-репортам в dev могут настраиваться. Отслеживание можно отключать в настройках iOS.",
+                ],
+              },
+              {
+                h: "6. Облако и устройство",
+                p: [
+                  "Большинство данных профиля и карт хранятся на устройстве. Клиент облачной базы (Firestore) в текущей реализации для синхронизации профиля не задействован; облачные функции при появлении будут с отдельной настройкой, политика будет обновлена.",
+                ],
+              },
+              {
+                h: "7. Сроки и защита",
+                p: [
+                  "Данные храним, пока это нужно для целей, закона и разрешения споров. Применяем обычные меры; абсолютной безопасности не существует.",
+                ],
+              },
+              {
+                h: "8. Права",
+                p: [
+                  "По применимому праву (в т.ч. GDPR, CCPA) возможны право на доступ, исправление, удаление, переносимость, возражение. Пишите на email выше. Удаление приложения не всегда стирает облачные копии, если синхронизация включалась в будущем.",
+                ],
+              },
+              {
+                h: "9. Дети",
+                p: [
+                  "Приложение не для детей младше 13 лет (или иного возраста по закону). Сознательно не собираем данные таких пользователей; напишите нам при необходимости.",
+                ],
+              },
+              {
+                h: "10. Международная передача",
+                p: [
+                  "Обработка может происходить в других странах, включая сторонние API; используем соответствующие меры по закону.",
+                ],
+              },
+              {
+                h: "11. Изменения",
+                p: [
+                  "Политика может обновляться. Дата «Обновлено» вверху — ориентир. Материальные изменения в отдельных юрисдикциях могут требовать доп. согласия.",
+                ],
+              },
+              {
+                h: "12. Контакты",
+                p: [
+                  "Запросы по приватности: <a href=\"mailto:{{email}}\">{{email}}</a>.",
+                ],
+              },
+            ],
+          },
+          hi: {
+            pageTitle: "Honeymoon — गोपनीयता नीति",
+            meta: "Honeymoon ऐप की गोपनीयता नीति, डेटा, AI, विश्लेषण।",
+            h1: "गोपनीयता नीति",
+            last: "अद्यतन: {{date}}",
+            navSupport: "सहायता",
+            navPrivacy: "गोपनीयता",
+            langLabel: "भाषा",
+            themeL: "लाइट",
+            themeD: "डार्क",
+            footer: "Honeymoon। सहायता पेज देखें।",
+            policyNote: "पूरी नीति नीचे अंग्रेज़ी में है; कानूनी पाठ हेतु अंग्रेज़ी संस्करण प्राथमिक है।",
+          },
+          es: {
+            pageTitle: "Honeymoon — Política de privacidad",
+            meta: "Política de privacidad de Honeymoon: datos, IA, analítica, derechos.",
+            h1: "Política de privacidad",
+            last: "Última actualización: {{date}}",
+            navSupport: "Soporte",
+            navPrivacy: "Privacidad",
+            langLabel: "Idioma",
+            themeL: "Tema claro",
+            themeD: "Tema oscuro",
+            footer: "Honeymoon. Página de soporte en la pestaña Soporte.",
+            policyNote:
+              "El texto legal completo continúa en inglés. La versión en inglés hace fe para fines legales.",
+          },
+          de: {
+            pageTitle: "Honeymoon — Datenschutz",
+            meta: "Datenschutzerklärung Honeymoon: Daten, KI, Analyse, Rechte.",
+            h1: "Datenschutzerklärung",
+            last: "Stand: {{date}}",
+            navSupport: "Support",
+            navPrivacy: "Datenschutz",
+            langLabel: "Sprache",
+            themeL: "Helles Design",
+            themeD: "Dunkles Design",
+            footer: "Honeymoon. Support-Seite unter Support.",
+            policyNote: "Der vollständige Rechtstext unten ist auf Englisch; die englische Fassung ist rechtlich maßgeblich.",
+          },
+          fr: {
+            pageTitle: "Honeymoon — Confidentialité",
+            meta: "Politique de confidentialité Honeymoon: données, IA, analytique, droits.",
+            h1: "Politique de confidentialité",
+            last: "Dernière mise à jour : {{date}}",
+            navSupport: "Assistance",
+            navPrivacy: "Confidentialité",
+            langLabel: "Langue",
+            themeL: "Thème clair",
+            themeD: "Thème sombre",
+            footer: "Honeymoon. La page d’assistance est sous « Assistance ».",
+            policyNote: "L’intégralité du texte juridique ci-dessous est en anglais et fait foi.",
+          },
+          it: {
+            pageTitle: "Honeymoon — Privacy",
+            meta: "Informativa privacy Honeymoon: dati, IA, analytics, diritti.",
+            h1: "Informativa sulla privacy",
+            last: "Aggiornamento: {{date}}",
+            navSupport: "Assistenza",
+            navPrivacy: "Privacy",
+            langLabel: "Lingua",
+            themeL: "Tema chiaro",
+            themeD: "Tema scuro",
+            footer: "Honeymoon. La pagina di assistenza è nella scheda Assistenza.",
+            policyNote: "L’informativa completa di seguito è in inglese e fa fede a fini legali.",
+          },
+        };
+
+        (function copyEnBlocks() {
+          ["hi", "es", "de", "fr", "it"].forEach(function (c) {
+            I[c].blocks = JSON.parse(JSON.stringify(I.en.blocks));
+          });
+        })();
+
+        function getQueryLang() {
+          try {
+            var p = new URLSearchParams(window.location.search).get("lang");
+            if (p && LANGS.some(function (l) { return l.code === p; })) return p;
+            var s = localStorage.getItem(LS_LANG);
+            if (s && LANGS.some(function (l) { return l.code === s; })) return s;
+          } catch (e) {}
+          var n = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+          n = n.split("-")[0].toLowerCase();
+          if (LANGS.some(function (l) { return l.code === n; })) return n;
+          return "en";
+        }
+
+        var currentLang = getQueryLang();
+
+        function t() {
+          var tr = I[currentLang];
+          if (tr && tr.blocks && tr.blocks.length) return tr;
+          return I.en;
+        }
+
+        function fill(str) {
+          if (!str) return "";
+          return str
+            .split("{{email}}")
+            .join(CONTACT)
+            .split("{{date}}")
+            .join(LASTUPD);
+        }
+
+        function esc(s) {
+          return String(s)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;");
+        }
+
+        function renderArticle() {
+          var tr = t();
+          var art = document.getElementById("legal-article");
+          if (!art) return;
+          var isEnBody = "hi" === currentLang || "es" === currentLang || "de" === currentLang || "fr" === currentLang || "it" === currentLang;
+          if (isEnBody) {
+            art.setAttribute("lang", "en");
+          } else {
+            art.setAttribute("lang", currentLang);
+          }
+          var html = "";
+          (tr.blocks || []).forEach(function (b) {
+            html += "<h2>" + esc(b.h) + "</h2>";
+            (b.p || []).forEach(function (para) {
+              html += "<p>" + fill(para) + "</p>";
+            });
+            if (b.ul && b.ul.length) {
+              html += "<ul>";
+              b.ul.forEach(function (li) {
+                html += "<li>" + esc(li) + "</li>";
+              });
+              html += "</ul>";
+            }
+          });
+          if (isEnBody && t().policyNote) {
+            html = '<p class="policy-note" style="font-size:0.85rem;color:var(--text-muted);margin:0 0 1rem">' + esc(
+              t().policyNote
+            ) + "</p>" + html;
+          }
+          art.innerHTML = html;
+        }
+
+        function applyMeta(tr) {
+          document.title = tr.pageTitle;
+          var md = document.getElementById("meta-desc");
+          if (md) md.setAttribute("content", tr.meta);
+          var ogt = document.getElementById("og-title");
+          if (ogt) ogt.setAttribute("content", tr.pageTitle);
+          var ogo = document.getElementById("meta-og");
+          if (ogo) ogo.setAttribute("content", tr.meta);
+        }
+
+        function getTheme() {
+          return document.documentElement.getAttribute("data-theme") || "dark";
+        }
+
+        function setMetaTheme() {
+          var m = document.getElementById("meta-theme");
+          if (m) m.setAttribute("content", "light" === getTheme() ? "#fff8fb" : "#0a0714");
+        }
+
+        function initTheme() {
+          var s = null;
+          try {
+            s = localStorage.getItem(LS_THEME) || localStorage.getItem(THEME_LEGACY);
+          } catch (e) {}
+          if (s === "light" || s === "dark") {
+            document.documentElement.setAttribute("data-theme", s);
+          } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
+            document.documentElement.setAttribute("data-theme", "light");
+          } else {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+          setMetaTheme();
+          var light = "light" === getTheme();
+          var suns = document.querySelectorAll(".t-sun");
+          var moons = document.querySelectorAll(".t-moon");
+          suns.forEach(function (el) {
+            el.style.display = light ? "none" : "block";
+          });
+          moons.forEach(function (el) {
+            el.style.display = light ? "block" : "none";
+          });
+        }
+
+        function toggleTheme() {
+          var n = "light" === getTheme() ? "dark" : "light";
+          try {
+            localStorage.setItem(LS_THEME, n);
+          } catch (e) {}
+          document.documentElement.setAttribute("data-theme", n);
+          setMetaTheme();
+          var light = n === "light";
+          document.querySelectorAll(".t-sun").forEach(function (el) {
+            el.style.display = light ? "none" : "block";
+          });
+          document.querySelectorAll(".t-moon").forEach(function (el) {
+            el.style.display = light ? "block" : "none";
+          });
+          if (window.lucide) window.lucide.createIcons();
+          setThemeA11y();
+        }
+
+        function setThemeA11y() {
+          var tr = t();
+          var b = document.getElementById("theme-toggle");
+          if (!b) return;
+          b.setAttribute("aria-label", "light" === getTheme() ? tr.themeD : tr.themeL);
+        }
+
+        function linkWithLang(href) {
+          var u = currentLang && currentLang !== "en" ? href + (href.indexOf("?") >= 0 ? "&" : "?") + "lang=" + encodeURIComponent(currentLang) : href;
+          return u;
+        }
+
+        function updateShell() {
+          var tr = t();
+          currentLang = document.getElementById("lang-select").value;
+          try {
+            localStorage.setItem(LS_LANG, currentLang);
+          } catch (e) {}
+          if (window.history && window.history.replaceState) {
+            var u = new URL(window.location.href);
+            if (currentLang && currentLang !== "en") u.searchParams.set("lang", currentLang);
+            else u.searchParams.delete("lang");
+            history.replaceState({}, "", u.toString());
+          }
+          document.documentElement.setAttribute("lang", currentLang);
+          document.getElementById("h1").textContent = tr.h1;
+          document.getElementById("last-upd").textContent = fill(tr.last);
+          document.getElementById("lang-label").textContent = tr.langLabel;
+          document.getElementById("nav-support").textContent = tr.navSupport;
+          document.getElementById("nav-privacy").textContent = tr.navPrivacy;
+          document.getElementById("footer-hint").textContent = tr.footer;
+          document.getElementById("nav-support").setAttribute("href", linkWithLang("index.html"));
+          document.getElementById("nav-privacy").setAttribute("href", linkWithLang("privacy.html"));
+          document.getElementById("brand-link").setAttribute("href", linkWithLang("index.html"));
+          applyMeta(tr);
+          renderArticle();
+          setThemeA11y();
+          if (window.lucide) lucide.createIcons();
+        }
+
+        function ready() {
+          var sel = document.getElementById("lang-select");
+          LANGS.forEach(function (L) {
+            var o = document.createElement("option");
+            o.value = L.code;
+            o.textContent = L.name;
+            sel.appendChild(o);
+          });
+          sel.value = currentLang;
+          sel.addEventListener("change", updateShell);
+          document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
+          initTheme();
+          updateShell();
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", ready);
+        } else {
+          ready();
+        }
+      })();
+    </script>
+  </body>
+</html>
