@@ -1,20 +1,33 @@
-# Honeymoon — страница поддержки
+# Honeymoon — страница поддержки (GitHub Pages)
 
-Публичный **статичный** сайт (один `index.html`) для [GitHub Pages](https://pages.github.com/).
+Статичный сайт: один `index.html`. Репозиторий задуман как **публичный**, отдельно от кода приложения.
 
-## Публикация
+## Всё настроить одной командой (после входа в GitHub)
 
-1. Создайте **новый** репозиторий на GitHub, например `honeymoon-support`, видимость **Public**.
-2. **Не** добавляйте README/gitignore в мастер при создании (или выложите сразу с этим пакетом).
-3. Содержимое папки `honeymoon-support` (этот снимок) положите в **корень** репо и зафиксируйте:
+1. **Один раз** войдите в CLI (в браузере откроется GitHub):
 
-   `index.html` и `.nojekyll`
+   ```bash
+   gh auth login
+   ```
 
-4. **Settings → Pages** → **Deploy from a branch** → `main` → папка **`/ (root)`** → Save.
-5. Сайт: `https://<ваш-логин>.github.io/honeymoon-support/`
+2. В этой папке выполните:
 
-Правки текста, почты, FAQ: только в `index.html`, блок `CONFIG` внизу.
+   ```bash
+   ./publish.sh
+   ```
 
-Если смените имя репозитория, обновите `link rel="canonical"` в `<head>`.
+Скрипт: создаёт `https://github.com/ВАШ_ЛОГИН/honeymoon-support` (если ещё нет), пушит `main`, включает **GitHub Pages** из **корня** ветки `main`, при необходимости правит `canonical` в `index.html`.
 
-Эта папка в проекте `Ephemera` существует как **отдельный** клон-репозиторий: при желании вынесите `honeymoon-support` в отдельную директорию и инициализируйте там `git` заново, не смешивая с приватным кодом приложения.
+Сайт: `https://ВАШ_ЛОГИН.github.io/honeymoon-support/`
+
+**Зависимость:** [GitHub CLI](https://cli.github.com/) (`brew install gh` — уже сделан на вашей машине, если `gh` в PATH).
+
+## Вручную (если не хотите скрипт)
+
+1. New repository → имя `honeymoon-support` → **Public** → без README.
+2. `git remote add origin …` и `git push -u origin main`
+3. **Settings → Pages** → Branch `main`, folder **/ (root)**.
+
+## Правки контента
+
+В `index.html` блок `CONFIG` внизу (почта, Telegram, FAQ).
