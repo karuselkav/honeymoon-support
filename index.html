@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!--
+      ====================================================================
+      Блок настроек SEO: замените title и description под своё приложение
+      (дублируйте смысл в CONFIG ниже, если меняете через скрипт)
+      ====================================================================
+    -->
+    <title>Honeymoon — Служба поддержки</title>
+    <meta
+      id="meta-desc"
+      name="description"
+      content="Свяжитесь с поддержкой Honeymoon. Мы отвечаем в течение 24 часов. Email, Telegram и ответы на частые вопросы."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://karuselkav.github.io/honeymoon-support/" />
+    <meta name="application-name" content="Honeymoon" />
+    <meta name="theme-color" content="#6366f1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+
+    <!-- Open Graph (удобно при шаринге ссылки) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Honeymoon — Служба поддержки" />
+    <meta
+      id="meta-og-desc"
+      property="og:description"
+      content="Напишите нам — ответим в течение 24 часов."
+    />
+    <meta property="og:locale" content="ru_RU" />
+    <meta name="twitter:card" content="summary" />
+
+    <!--
+      Плейсхолдер фавиконки: замените href на свою .ico/.png в репо Pages
+      или оставьте встроенный SVG.
+    -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236366f1'/%3E%3Cpath fill='white' d='M8 10h6v6H8V10zm10 0h6v6h-6V10zM8 20h6v2H8v-2zm10 0h6v2h-6v-2z'/%3E%3C/svg%3E"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: [
+                "ui-sans-serif",
+                "system-ui",
+                "-apple-system",
+                "Segoe UI",
+                "Roboto",
+                "Inter",
+                "sans-serif",
+              ],
+            },
+            boxShadow: {
+              card: "0 1px 0 rgba(15, 23, 42, 0.04), 0 12px 32px -12px rgba(15, 23, 42, 0.12)",
+              "card-dark": "0 1px 0 rgba(255,255,255,0.06), 0 12px 40px -12px rgba(0,0,0,0.45)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Скрытие стандартного треугольника у <details> в WebKit */
+      details summary::-webkit-details-marker {
+        display: none;
+      }
+      /* Минимальные надстройки вне utility-классов Tailwind */
+      .tap-target {
+        -webkit-tap-highlight-color: transparent;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-dvh antialiased text-slate-800 bg-slate-50 selection:bg-indigo-500/20 selection:text-slate-900 dark:text-slate-100 dark:bg-slate-950 dark:selection:bg-indigo-400/25"
+  >
+    <!--
+      Кнопка темы: класс "dark" на <html> переключает палитру Tailwind
+    -->
+    <button
+      type="button"
+      id="theme-toggle"
+      class="tap-target fixed right-4 top-4 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-slate-200/80 bg-white/90 text-slate-600 shadow-sm backdrop-blur transition hover:scale-105 hover:border-slate-300 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 dark:border-slate-700/80 dark:bg-slate-900/90 dark:text-slate-200 dark:hover:border-slate-500 dark:hover:text-white"
+      aria-label="Переключить тему"
+    >
+      <i data-lucide="sun" class="h-5 w-5 dark:hidden" aria-hidden="true"></i>
+      <i data-lucide="moon" class="hidden h-5 w-5 dark:block" aria-hidden="true"></i>
+    </button>
+
+    <div class="mx-auto flex min-h-dvh max-w-2xl flex-col px-4 pb-10 pt-8 sm:px-6 sm:pt-10">
+      <!--
+        Шапка: плейсхолдер логотипа (иконка Lucide) + название (JS подставит из CONFIG)
+      -->
+      <header class="mb-10 flex flex-col items-center text-center" id="app-header">
+        <div
+          class="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-200/80 bg-white text-indigo-600 shadow-card dark:border-slate-700/80 dark:bg-slate-900 dark:text-indigo-400 dark:shadow-card-dark"
+          role="img"
+          aria-label="Логотип приложения (плейсхолдер)"
+        >
+          <i data-lucide="box" class="h-8 w-8" aria-hidden="true"></i>
+        </div>
+        <p
+          class="text-sm font-medium uppercase tracking-widest text-slate-500 dark:text-slate-400"
+          id="app-name"
+        >
+          Honeymoon
+        </p>
+      </header>
+
+      <main class="flex-1" id="main">
+        <h1
+          class="mb-3 text-balance text-center text-3xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-4xl"
+        >
+          Служба поддержки
+        </h1>
+        <p
+          class="mx-auto mb-10 max-w-md text-balance text-center text-base leading-relaxed text-slate-600 dark:text-slate-300"
+        >
+          Мы всегда готовы помочь. Напишите нам — ответим в течение 24 часов.
+        </p>
+
+        <!--
+          Контакты: кнопки генерируются из CONFIG; пустая строка = секция не показывается
+        -->
+        <section aria-labelledby="contact-heading" class="mb-12">
+          <h2 id="contact-heading" class="sr-only">Основные контакты</h2>
+          <div id="contact-actions" class="grid grid-cols-1 gap-3 sm:grid-cols-2"></div>
+        </section>
+
+        <!--
+          Секция FAQ: список вопросов в JS (массив faq) для удобного редактирования
+        -->
+        <section
+          class="mb-8 rounded-2xl border border-slate-200/80 bg-white p-1 shadow-card dark:border-slate-800 dark:bg-slate-900/60 dark:shadow-card-dark"
+          aria-labelledby="faq-heading"
+        >
+          <div class="px-4 pb-2 pt-4 sm:px-5 sm:pt-5">
+            <h2
+              id="faq-heading"
+              class="text-lg font-semibold text-slate-900 dark:text-slate-100"
+            >
+              Часто задаваемые вопросы
+            </h2>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
+              Короткие ответы на типичные вопросы.
+            </p>
+          </div>
+          <div id="faq-list" class="border-t border-slate-200/80 dark:border-slate-800"></div>
+        </section>
+      </main>
+
+      <footer
+        class="mt-auto border-t border-slate-200/80 pt-8 text-center text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400"
+      >
+        <p>
+          <span id="footer-app-name">Honeymoon</span> ·
+          <span id="footer-year">2026</span>
+        </p>
+        <p class="mt-1 text-xs">Сделано с заботой о пользователях.</p>
+      </footer>
+    </div>
+
+    <!--
+      Всплывающее уведомление копирования email
+    -->
+    <div
+      id="toast"
+      class="pointer-events-none fixed bottom-6 left-1/2 z-50 -translate-x-1/2 translate-y-2 opacity-0 transition duration-300"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+      <div
+        class="flex items-center gap-2 rounded-full border border-slate-200/90 bg-white px-4 py-2.5 text-sm font-medium text-slate-800 shadow-lg dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100"
+      >
+        <i data-lucide="check-circle-2" class="h-4 w-4 text-emerald-500" aria-hidden="true"></i>
+        <span id="toast-text">Скопировано</span>
+      </div>
+    </div>
+
+    <!-- Lucide: синхронно перед нашим скриптом, чтобы createIcons() был доступен в init -->
+    <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+    <script>
+      /**
+       * ========================================================================
+       * CONFIG — единственное место, где правятся название, контакты и FAQ
+       * Замените плейсхолдеры на свои данные перед публикацией на GitHub Pages
+       * ========================================================================
+       */
+      const CONFIG = {
+        // Название приложения (шапка, футер, document.title, meta)
+        appName: "Honeymoon",
+
+        // Краткое SEO-описание (name=description, og:description)
+        seoDescription:
+          "Свяжитесь с поддержкой Honeymoon. Мы отвечаем в течение 24 часов. Email, Telegram и ответы на частые вопросы.",
+
+        // Подпись в футере: если нужен другой год — поменяйте здесь
+        copyrightYear: 2026,
+
+        // Основной email — кнопка, mailto:, копирование
+        email: "vnovaastrum@gmail.com",
+
+        // Telegram: "https://t.me/username" или "@username" — пусто "", чтобы скрыть кнопку
+        telegram: "https://t.me/karuselka_v",
+
+        // Дополнительно: пустая строка "" = кнопка не показывается
+        whatsapp: "", // пример: "https://wa.me/79001234567"
+        vk: "", // пример: "https://vk.com/yourpage"
+        instagram: "", // пример: "https://www.instagram.com/yourpage"
+
+        /**
+         * FAQ: { q: "вопрос", a: "ответ" } — 3–4 пункта
+         */
+        faq: [
+          {
+            q: "Как быстро вы отвечаете?",
+            a: "Обычно отвечаем в течение 24 часов в рабочие дни. В выходные ответ может занять чуть дольше.",
+          },
+          {
+            q: "Куда писать, если срочно?",
+            a: "Для срочных вопросов удобнее всего написать в Telegram — уведомления приходят быстрее, чем на почту.",
+          },
+          {
+            q: "Нужен ли мне аккаунт, чтобы написать в поддержку?",
+            a: "Нет, вы можете написать с любого удобного адреса электронной почты. Укажите в письме модель устройства и версию приложения, если вопрос технический.",
+          },
+          {
+            q: "Как пожаловаться на баг или предложить идею?",
+            a: "Напишите на почту с темой «Баг» или «Предложение» и кратко опишите ситуацию. Скриншоты и шаги воспроизведения очень помогают.",
+          },
+        ],
+      };
+
+      // --- Утилиты: тема, копирование, разбор ссылок ---
+
+      const THEME_KEY = "support-page-theme";
+
+      function getSystemDark() {
+        return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      }
+
+      function applyTheme(dark) {
+        const root = document.documentElement;
+        if (dark) root.classList.add("dark");
+        else root.classList.remove("dark");
+        if (window.lucide) lucide.createIcons();
+      }
+
+      function initTheme() {
+        const stored = localStorage.getItem(THEME_KEY);
+        if (stored === "dark" || stored === "light") {
+          applyTheme(stored === "dark");
+        } else {
+          applyTheme(getSystemDark());
+        }
+      }
+
+      function toggleTheme() {
+        const isDark = document.documentElement.classList.toggle("dark");
+        localStorage.setItem(THEME_KEY, isDark ? "dark" : "light");
+        if (window.lucide) lucide.createIcons();
+      }
+
+      function normalizeTelegramUrl(input) {
+        if (!input || !input.trim()) return "";
+        const t = input.trim();
+        if (t.startsWith("http")) return t;
+        const name = t.replace(/^@/, "");
+        return "https://t.me/" + name;
+      }
+
+      function showToast(message) {
+        const el = document.getElementById("toast");
+        const text = document.getElementById("toast-text");
+        text.textContent = message;
+        el.classList.remove("translate-y-2", "opacity-0");
+        el.classList.add("translate-y-0", "opacity-100");
+        clearTimeout(showToast._t);
+        showToast._t = setTimeout(function () {
+          el.classList.add("translate-y-2", "opacity-0");
+          el.classList.remove("translate-y-0", "opacity-100");
+        }, 2500);
+      }
+
+      async function copyEmail() {
+        const email = CONFIG.email;
+        if (!email) {
+          showToast("Email не настроен");
+          return;
+        }
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(email);
+          } else {
+            const ta = document.createElement("textarea");
+            ta.value = email;
+            ta.setAttribute("readonly", "");
+            ta.style.position = "fixed";
+            ta.style.left = "-9999px";
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand("copy");
+            document.body.removeChild(ta);
+          }
+          showToast("Email скопирован");
+        } catch (e) {
+          showToast("Не удалось скопировать");
+        }
+        if (window.lucide) lucide.createIcons();
+      }
+
+      /**
+       * Сборка кнопок контакта: единый стиль + hover-анимация
+       */
+      function buildContactButton({ href, label, icon, external }) {
+        const a = document.createElement("a");
+        a.href = href;
+        a.className =
+          "tap-target group flex min-h-[3.5rem] items-center gap-3 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-left shadow-sm transition will-change-transform " +
+          "hover:-translate-y-0.5 hover:border-indigo-300/80 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 " +
+          "active:scale-[0.99] dark:border-slate-700/80 dark:bg-slate-900/40 dark:hover:border-indigo-500/50";
+        a.innerHTML =
+          '<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition group-hover:bg-indigo-100 dark:bg-indigo-500/10 dark:text-indigo-300 dark:group-hover:bg-indigo-500/20">'
+          + '<i data-lucide="' + icon + '" class="h-5 w-5" aria-hidden="true"></i></span>' +
+          '<span class="text-base font-medium text-slate-900 dark:text-slate-100">' + label + "</span>" +
+          '<i data-lucide="chevron-right" class="ml-auto h-5 w-5 shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:text-slate-600 dark:text-slate-500" aria-hidden="true"></i>';
+        if (external) {
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+        }
+        return a;
+      }
+
+      function renderContacts() {
+        const wrap = document.getElementById("contact-actions");
+        wrap.innerHTML = "";
+
+        const email = (CONFIG.email || "").trim();
+        if (email) {
+          const row = document.createElement("div");
+          row.className = "col-span-1 sm:col-span-2";
+          const inner = document.createElement("div");
+          inner.className =
+            "flex flex-col gap-2 rounded-2xl border border-slate-200/80 bg-white p-1 shadow-sm dark:border-slate-700/80 dark:bg-slate-900/40 sm:flex-row sm:items-stretch";
+          const mailBtn = buildContactButton({
+            href: "mailto:" + email,
+            label: "Email: " + email,
+            icon: "mail",
+            external: false,
+          });
+          mailBtn.classList.add("flex-1", "rounded-xl", "border-0", "shadow-none", "px-3");
+          const copyBtn = document.createElement("button");
+          copyBtn.type = "button";
+          copyBtn.className =
+            "tap-target flex shrink-0 items-center justify-center gap-2 rounded-xl border border-slate-200/80 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 active:scale-[0.99] dark:border-slate-700/80 dark:bg-slate-800/80 dark:text-slate-200 dark:hover:bg-slate-800 sm:w-auto";
+          copyBtn.innerHTML =
+            '<i data-lucide="copy" class="h-4 w-4" aria-hidden="true"></i><span>Скопировать</span>';
+          copyBtn.addEventListener("click", copyEmail);
+          inner.appendChild(mailBtn);
+          inner.appendChild(copyBtn);
+          row.appendChild(inner);
+          wrap.appendChild(row);
+        }
+
+        const tg = normalizeTelegramUrl(CONFIG.telegram || "");
+        if (tg) {
+          wrap.appendChild(
+            buildContactButton({ href: tg, label: "Telegram", icon: "send", external: true })
+          );
+        }
+
+        const w = (CONFIG.whatsapp || "").trim();
+        if (w) {
+          wrap.appendChild(
+            buildContactButton({ href: w, label: "WhatsApp", icon: "message-circle", external: true })
+          );
+        }
+
+        const vk = (CONFIG.vk || "").trim();
+        if (vk) {
+          wrap.appendChild(
+            buildContactButton({ href: vk, label: "ВКонтакте", icon: "users", external: true })
+          );
+        }
+
+        const ig = (CONFIG.instagram || "").trim();
+        if (ig) {
+          wrap.appendChild(
+            buildContactButton({ href: ig, label: "Instagram", icon: "instagram", external: true })
+          );
+        }
+      }
+
+      function renderFaq() {
+        const list = document.getElementById("faq-list");
+        const items = Array.isArray(CONFIG.faq) ? CONFIG.faq : [];
+        list.innerHTML = "";
+        items.forEach(function (item, index) {
+          const details = document.createElement("details");
+          details.className =
+            "group border-t border-slate-200/80 transition-colors first:border-t-0 dark:border-slate-800";
+          details.innerHTML =
+            '<summary class="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-4 text-left text-sm font-medium text-slate-900 transition hover:bg-slate-50 sm:px-5 dark:text-slate-100 dark:hover:bg-slate-800/40">' +
+            '<span class="pr-2">' + escapeHtml(item.q) + "</span>" +
+            '<i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180 dark:text-slate-500" aria-hidden="true"></i></summary>' +
+            '<div class="border-t border-transparent px-4 pb-4 pt-0 text-sm leading-relaxed text-slate-600 dark:border-slate-800/0 dark:text-slate-300 sm:px-5">' +
+            "<p>" + escapeHtml(item.a) + "</p></div>";
+          list.appendChild(details);
+        });
+        // A11y: первый вопрос можно раскрыть программно — оставим всё свёрнутым по умолчанию
+        if (window.lucide) lucide.createIcons();
+      }
+
+      function escapeHtml(s) {
+        if (s == null) return "";
+        return String(s)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+
+      function applyTextFromConfig() {
+        document.getElementById("app-name").textContent = CONFIG.appName;
+        var fn = document.getElementById("footer-app-name");
+        if (fn) fn.textContent = CONFIG.appName;
+        var y = document.getElementById("footer-year");
+        if (y) y.textContent = String(CONFIG.copyrightYear);
+        document.title = CONFIG.appName + " — Служба поддержки";
+
+        var desc = (CONFIG.seoDescription || "").trim();
+        if (desc) {
+          var md = document.getElementById("meta-desc");
+          if (md) md.setAttribute("content", desc);
+          var og = document.getElementById("meta-og-desc");
+          if (og) og.setAttribute("content", desc);
+        }
+        var ogt = document.querySelector('meta[property="og:title"]');
+        if (ogt) ogt.setAttribute("content", CONFIG.appName + " — Служба поддержки");
+        var napp = document.querySelector('meta[name="application-name"]');
+        if (napp) napp.setAttribute("content", CONFIG.appName);
+      }
+
+      function init() {
+        initTheme();
+        applyTextFromConfig();
+        renderContacts();
+        renderFaq();
+        if (window.lucide) lucide.createIcons();
+
+        document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+      } else {
+        init();
+      }
+    </script>
+  </body>
+</html>
